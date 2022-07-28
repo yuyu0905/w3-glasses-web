@@ -11,8 +11,25 @@
 }
 
 @mixin block-padding() {
-    padding: 80px 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
     @include mobile() {
-        padding: 40px 0;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
+}
+
+@mixin block-padding-2() {
+    padding-top: 96px;
+    padding-bottom: 80px;
+    @include pad() {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    @include mobile() {
+        padding-top: 40px;
+        padding-bottom: 64px;
+    }
+
 }

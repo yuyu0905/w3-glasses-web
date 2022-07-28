@@ -1,0 +1,24 @@
+.fqa {
+    @include block-padding-2;
+    h2 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        @include mobile() {
+            gap: 24px;
+        }
+
+        li {
+            h3 {
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+
+        }
+    }
+}

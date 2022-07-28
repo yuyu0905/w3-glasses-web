@@ -81,8 +81,20 @@ a {
     text-align: center;
 }
 
+// 頁面共通 h1 樣式
+.page-title {
+    font-size: 48px;
+    padding-left: 16px;
+    border-left: 8px solid $color-primary;
+    margin-bottom: 32px;
 
+    @include mobile() {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+}
 
+// 分頁
 .pagination {
     display: flex;
     justify-content: center;
