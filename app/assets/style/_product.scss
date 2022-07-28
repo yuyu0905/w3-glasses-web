@@ -1,0 +1,177 @@
+// 選單
+.product-menu {
+    max-width: 1320px; // (1296 + 24 gutter)
+    margin: 0 auto;
+    padding: 0 12px;
+    @include pad() {
+        padding: 0;
+    }
+
+    ul {
+        display: flex;
+        li {
+            width: 100%;
+            border-left: 1px solid #DCDCDC;
+            &:last-child {
+                border-right: 1px solid #DCDCDC;
+            }
+
+            a {
+                display: block;
+                padding: 24px 0;
+                font-size: 32px;
+                color: black;
+                border-bottom: 1px solid transparent;
+                @include pad {
+                    font-size: 24px;
+                    padding: 16px 0;
+                }
+                @include mobile() {
+                    font-size: 16px;
+                    padding: 16px 0;
+                }
+
+                &.active, &:hover {
+                    border-bottom: 8px solid $color-primary;
+                }
+            }
+        }
+    }
+
+    
+}
+
+// header
+.product-header {
+    ul {
+        display: flex;
+    }
+    &-img {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 296px;
+        width: 50%;
+    }
+    &-1 {
+        background-image: url("../images/product-header-1.png");
+        @include pad() {
+            background-image: url("../images/product-header-sm-1.png");
+        }
+    }
+    &-2 {
+        background-image: url("../images/product-header-2.png");
+        @include pad() {
+            background-image: url("../images/product-header-sm-2.png");
+        }
+    }
+    &-3 {
+        background-image: url("../images/product-header-3.png");
+        @include pad() {
+            background-image: url("../images/product-header-sm-3.png");
+        }
+    }
+    &-4 {
+        background-image: url("../images/product-header-4.png");
+        @include pad() {
+            background-image: url("../images/product-header-sm-4.png");
+        }
+    }
+}
+
+// 產品列表
+.product {
+    @include block-padding;
+
+    h1 {
+        font-size: 42px;
+        @include mobile() {
+            font-size: 24px;
+        }
+    }
+    h2 {
+        font-size: 32px;
+        margin-bottom: 32px;
+        @include mobile() {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -12px;
+        
+        > li {
+            padding: 0 12px;
+            margin-bottom: 80px;
+
+            img {
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    
+    &-body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            font-size: 24px;
+        }
+    }
+
+    &-color {
+        display: flex;
+        gap: 8px;
+    }
+
+    &-dark {
+        background-color: #5F3E2D;
+        border-radius: 4px;
+        width: 24px;
+        height: 24px;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &-light {
+        background-color: #B75929;
+        border-radius: 4px;
+        width: 24px;
+        height: 24px;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    
+}
+
+@mixin product-list-width($li-width) {
+    .product-list > li {
+        width: $li-width;
+        @include pad() {
+            width: 50%;
+            margin-bottom: 40px;
+        }
+        @include mobile() {
+            width: 100%;
+            margin-bottom: 24px;
+        }
+    }
+}
+
+
+.product-optical {
+    @include product-list-width(25%);
+}
+
+.product-sunglasses {
+    @include product-list-width(33.33%);
+}

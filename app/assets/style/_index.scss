@@ -94,9 +94,6 @@
       margin-bottom: 24px;
     }
   }
-  h3 {
-    font-size: 48px;
-  }
   ul {
     display: flex;
     gap: 24px;
@@ -112,12 +109,19 @@
       @include mobile() {
         width: 98%;
       }
+      &:hover {
+        transform: scale(1.1);
+        h3 {
+          background-color: $color-primary;
+          color: white;
+        }
+      }
     }
-  }
-  img {
-    margin-bottom: 8px;
-    &:hover {
-      transform: scale(1.1);
+    h3 {
+      font-size: 48px;
+    }
+    img {
+      margin-bottom: 8px;
     }
   }
 }
@@ -262,7 +266,7 @@
       }
     }
 
-    input[type='text'], textarea {
+    input[type='text'], input[type='tel'], input[type='email'], textarea {
       width: 100%;
       padding: 6px 12px;
       font-size: 16px;
