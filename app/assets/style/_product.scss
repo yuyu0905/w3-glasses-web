@@ -106,11 +106,10 @@
         > li {
             padding: 0 12px;
             margin-bottom: 80px;
-
-            img {
-                &:hover {
-                    opacity: 0.5;
-                }
+        }
+        img {
+            &:hover {
+                opacity: 0.5;
             }
         }
     }

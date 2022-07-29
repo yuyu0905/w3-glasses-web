@@ -152,9 +152,6 @@
       @include mobile() {
         background-image: url("../images/home-section4-1-sm.png");
       }
-      &:hover {
-        transform: scale(1.1);
-      }
     }
     &-2 {
       background-image: url("../images/home-section4-2.png");
@@ -164,9 +161,6 @@
       height: 240px;
       @include mobile() {
         background-image: url("../images/home-section4-2-sm.png");
-      }
-      &:hover {
-        transform: scale(1.1);
       }
     }
   }
@@ -183,6 +177,9 @@
       width: 50%;
       @include pad() {
         width: 100%;
+      }
+      &:hover {
+        transform: scale(1.1);
       }
     }
 

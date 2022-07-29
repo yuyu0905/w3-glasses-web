@@ -1,0 +1,385 @@
+// 部落格選單
+.blog-menu {
+    background-color: $color-secondary;
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        @include mobile() {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            
+            a {
+                display: block;
+                padding: 13px 48px 13px 0;
+
+                &:hover {
+                    color: $color-pink;
+                }
+            }
+        }
+    }
+    .icon {
+        font-size: 40px;
+        line-height: 1;
+        padding: 8px 0;
+
+        &:hover {
+            color: $color-pink;
+        }
+    }
+}
+
+// 部落格列表
+.blog {
+    @include block-padding-2;
+
+    &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        margin-bottom: 124px;
+
+        @include pad() {
+            margin-top: 8px;
+            gap: 8px;
+            margin-bottom: 80px;
+        }
+        @include mobile() {
+            gap: 24px;
+            margin-bottom: 64px;
+        }
+        
+        li {
+            display: flex;
+            gap: 24px;
+            @include mobile() {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    }
+    
+    &-img {
+        display: block;
+        width: 50%;
+        @include pad() {
+            height: calc(50% - 16px);
+        }
+        @include mobile() {
+            width: 100%;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+    }
+
+    &-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 50%;
+        
+        @include mobile() {
+            width: 100%;
+        }
+    }
+
+    &-info {
+        @include mobile() {
+            width: 100%;
+        }
+        h2 {
+            font-size: 32px;
+            @include pad() {
+                font-size: 24px;
+            }
+        }
+
+        
+        &-subtitle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+
+            h3 {
+                font-size: 20px;
+                @include pad() {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &-content {
+            font-size: 20px;
+            color: #555555;
+            @include pad() {
+                font-size: 16px;
+                // 限制內容
+                overflow: hidden;
+                text-overflow: ellipsis;
+                // 多行文字省略號
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 6;
+            }
+            @include mobile() {
+                display: none;
+            }
+        }
+
+        &-more {
+            display: block;
+            font-size: 36px;
+            @include pad() {
+                width: 4rem;
+                font-size: 16px;
+                font-weight: normal;
+                color: #555555;
+                background-color: white;
+                transform: translateY(-100%);
+                text-align: right;
+                &::before {
+                    content: '...';
+                }
+            }
+            @include mobile() {
+                display: none;
+            }
+
+            &:hover {
+                transform: scale(1.1);
+                @include pad() {
+                    transform: translateY(-100%);
+                    color: black;
+                    text-decoration: underline;
+                    font-weight: bold;
+                }
+            }
+
+        }
+
+    }
+}
+
+
+// 部落格 - 文章類別
+// 部落格文章 - 上方麵包屑
+.bread-crumbs {
+    display: flex;
+    margin-bottom: 8px;
+
+    a {
+        color: black;
+        &:hover {
+            color: $color-primary;
+        }
+        &.active {
+            color: $color-primary;
+        }
+    }
+    span {
+        margin: 4px;
+    }
+}
+
+// 部落格文章 - 上方文章類別
+.tags {
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+    margin-bottom: 8px;
+    @include mobile {
+        font-size: 16px;
+    }
+
+    a {
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+}
+
+// 部落格文章 - 內容
+.blog-page {
+    padding-top: 24px;
+    padding-bottom: 80px;
+    @include pad() {
+        padding-top: 8px;
+    }
+
+    @include mobile() {
+        padding-top: 16px;
+        padding-bottom: 64px;
+    }
+
+    &-main {
+        display: flex;
+        gap: 24px;
+    }
+
+    &-content {
+        width: 66%;
+        @include pad() {
+            width: 75%;
+        }
+        @include mobile() {
+            width: 100%;
+        }
+        h1 {
+            font-size: 48px;
+            @include mobile() {
+                font-size: 24px;
+            }
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            @include pad() {
+                margin-bottom: 24px;
+            }
+            @include mobile() {
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 40px;
+            @include pad() {
+                gap: 24px;
+            }
+            @include mobile() {
+                gap: 16px;
+                margin-bottom: 0;
+            }
+        }
+
+        
+        img {
+            margin-bottom: 8px;
+            @include pad() {
+                margin-bottom: 16px;
+            }
+            @include mobile() {
+                margin-bottom: 8px;
+            }
+
+        }
+        p {
+            color: #555555;
+        }
+    }
+}
+
+// 部落格文章 - tag 列表
+.blog-page-tags {
+    width: 25%;
+    @include pad() {
+        width: 23%;
+    }
+    @include mobile() {
+        display: none;
+    }
+
+    h2 {
+        font-size: 32px;
+        @include pad() {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+    }
+
+    &-icon {
+        font-size: 48px;
+        line-height: 1;
+        vertical-align: middle;
+        margin-right: 8px;
+        @include pad() {
+            font-size: 24px;
+            margin-right: 0;
+        }
+    }
+
+    &-list {
+        font-size: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        @include pad() {
+            gap: 0;
+        }
+        li {
+            margin-right: 20px;
+            @include pad() {
+                margin-right: 24px;
+            }
+        }
+
+        a {
+            display: block;
+            @include pad() {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+// 部落格文章 - 表尾
+.blog-page-footer {
+    @include mobile() {
+        display: none;
+    }
+    &-btn {
+        display: block;
+        color: black;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    img {
+        max-width: 24px;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    
+    &-share {
+        display: flex;
+        gap: 16px;
+        padding-bottom: 16px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid #707070;
+    }
+
+    &-changed {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-icon {
+        font-size: 24px;
+        line-height: 1;
+        vertical-align: middle;
+    }
+
+    &-link {
+        display: flex;
+        gap: 8px;
+        color: black;
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
