@@ -219,7 +219,7 @@
 
     @include mobile() {
         padding-top: 16px;
-        padding-bottom: 64px;
+        padding-bottom: 48px;
     }
 
     &-main {
@@ -252,20 +252,6 @@
                 margin-bottom: 16px;
             }
         }
-        ul {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            margin-bottom: 40px;
-            @include pad() {
-                gap: 24px;
-            }
-            @include mobile() {
-                gap: 16px;
-                margin-bottom: 0;
-            }
-        }
-
         
         img {
             margin-bottom: 8px;
@@ -279,6 +265,10 @@
         }
         p {
             color: #555555;
+            margin-bottom: 40px;
+            @include mobile() {
+                margin-bottom: 16px;
+            }
         }
     }
 }
@@ -331,6 +321,9 @@
             display: block;
             @include pad() {
                 font-size: 16px;
+            }
+            &:hover {
+                color: $color-secondary;
             }
         }
     }
