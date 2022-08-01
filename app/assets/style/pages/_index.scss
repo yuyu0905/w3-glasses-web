@@ -247,7 +247,8 @@
   }
 
   &-main {
-    width: 33.33%;
+    width: 50%;
+    margin: 0 auto;
     @include pad() {
       width: 80%;
     }
@@ -292,6 +293,10 @@
       height: 24px;
       margin-right: 4px;
       
+    }
+
+    label {
+      margin-bottom: 0px;
     }
   }
 
