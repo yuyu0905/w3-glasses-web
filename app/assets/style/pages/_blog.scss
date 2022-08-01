@@ -147,6 +147,7 @@
                 background-color: white;
                 transform: translateY(-100%);
                 text-align: right;
+                text-transform: lowercase;
                 &::before {
                     content: '...';
                 }
