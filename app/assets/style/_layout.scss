@@ -124,7 +124,7 @@
             @include mobile() {
                 margin-bottom: 24px;
             }
-            h3 {
+            p {
                 display: flex;
                 font-size: 36px;
                 @include mobile() { 
@@ -147,18 +147,17 @@
 
     hr {
         margin-top: 0;
-        margin-bottom: 32px;
-        @include mobile() { 
-            margin-bottom: 16px;
-        }
     }
 
     &-main {
+        margin-bottom: 32px;
+        border-bottom: 1px solid white;
         @include mobile() {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             flex-direction: row-reverse;
+            margin-bottom: 16px;
         }
     }
 
